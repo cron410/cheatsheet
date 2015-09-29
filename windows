@@ -1,0 +1,2 @@
+Download file (without %20 for space)
+powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsite.as/on the internet.html', 'C:\users\Public\Desktop\this thing.txt') }"
