@@ -1,2 +1,3 @@
 Download file (without %20 for space)
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsite.as/on the internet.html', 'C:\users\Public\Desktop\this thing.txt') }"
+robocopy D:\ E:\trashes\d\ /XJ /MAX:5000000000 /E /mir /np /mt:1
