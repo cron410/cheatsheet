@@ -1,4 +1,4 @@
-Download file (without %20 for space)
+Download file with CMD via powershell (do not add %20 for spaces)
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsite.as/on the internet.html', 'C:\users\Public\Desktop\this thing.txt') }"
 
 Robocopy
