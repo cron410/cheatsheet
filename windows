@@ -1,2 +1,10 @@
 Download file (without %20 for space)
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsite.as/on the internet.html', 'C:\users\Public\Desktop\this thing.txt') }"
+
+Robocopy
+robocopy C:\source F:\desitnation /XJ /MAX:5000000000 /E /mir /np /mt:1
+
+Office 365
+set-executionpolicy unrestricted
+Import-Module DirSync
+Start-onlinecoexistencesync
