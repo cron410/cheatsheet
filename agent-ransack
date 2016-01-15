@@ -1,0 +1,7 @@
+find Cryptowall encrypted filenames
+file name:
+*\.*;NOT:*.doc;*.docx;*.xls;*.xlsx;*.pdf;*quick*;*.wpd;*2008*;*moore*;*.exe;*.txt;*.bat;*.lnk;*.csv;*.pif;*.c01;*.db;*.qbw;*.qbb;*.!cm;*.cfs;*.cfx;*.gen;*.dsn;*.ppt;*.msg;*.html;*.htm;*.conf;*.bin;*.tar*;*.zip*;*.gz*;*.bz*;*.7z;*.rar
+
+date modified
+after: day before cryptwall infection
+before: day after cryptowall infection
