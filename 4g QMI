@@ -1,3 +1,11 @@
+http://unix.stackexchange.com/questions/65086/endless-data-loop-from-dev-ttyusb-while-sending-at-commands
+http://unix.stackexchange.com/questions/97242/how-to-send-at-commands-to-a-modem-in-linux
+http://ubuntuforums.org/showthread.php?t=2123996
+https://sigquit.wordpress.com/tag/libqmi/
+https://lists.freedesktop.org/archives/libmbim-devel/2015-August/000626.html
+http://www.draisberghof.de/usb_modeswitch/bb/viewtopic.php?f=3&t=706&start=45
+
+
     1  echo "AT" > /dev/ttyUSB0
     2  echo "AT" > /dev/ttyUSB1
     3  echo "AT" > /dev/ttyUSB2
