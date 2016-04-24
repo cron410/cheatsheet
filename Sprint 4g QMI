@@ -1,0 +1,26 @@
+http://unix.stackexchange.com/questions/65086/endless-data-loop-from-dev-ttyusb-while-sending-at-commands
+http://unix.stackexchange.com/questions/97242/how-to-send-at-commands-to-a-modem-in-linux
+http://ubuntuforums.org/showthread.php?t=2123996
+https://sigquit.wordpress.com/tag/libqmi/
+https://lists.freedesktop.org/archives/libmbim-devel/2015-August/000626.html
+http://www.draisberghof.de/usb_modeswitch/bb/viewtopic.php?f=3&t=706&start=45
+
+This was the most helpful
+!!!!!!  http://tiebing.blogspot.com/2015/03/linux-running-4g-lte-modem.html   !!!!!!
+
+device="/dev/cdc-wdm0"
+wds=`uqmi -s -d "$device" --get-client-id wds`
+modes="all"
+# modes="lte"
+
+uqmi -s -d "$device" --get-pin-status
+uqmi -s -d "$device" --get-serving-system
+uqmi -s -d "$device" --get-signal-info
+#uqmi -s -d "$device" --set-data-format 802.3
+uqmi -s -d "$device" --wda-get-data-format
+uqmi -s -d "$device" --wda-set-data-format 802.3
+uqmi -s -d "$device" --wda-get-data-format
+uqmi -s -d "$device" --set-network-modes "$modes"
+uqmi -s -d "$device" --set-client-id wds,"$wds" --start-network "r.ispsn"
+# uqmi -s -d "$device" --set-client-id wds,"$wds" --start-network "r.ispsn" --autoconnect
+uqmi -s -d "$device" --get-data-status
