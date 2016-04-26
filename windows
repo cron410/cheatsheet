@@ -4,6 +4,16 @@ powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsit
 Robocopy
 robocopy C:\source F:\desitnation /XJ /MAX:5000000000 /E /mir /np /mt:1
 
+Office 365 API
+https://www.microsoft.com/en-us/download/details.aspx?id=41950  
+http://go.microsoft.com/fwlink/p/?linkid=236297 
+
+
+
+
+
+
+###### OLD ######
 Office 365 force AD sync
 set-executionpolicy unrestricted
 Import-Module DirSync
