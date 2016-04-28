@@ -1,0 +1,4 @@
+cron job for every 10 minutes, disable ICMP "Destination Net Unreachable" so clients don't know the WAN is going to go down,
+then restart WAN connection (in this case wwan in OpenWRT), then enable ICMP Destination Net Unreachable for actual network down situation.
+It works, but fucks with any network monitoring you may want to do.
+*/10 * * * * iptables -I OUTPUT -p icmp --icmp-type destination-unreachable -j DROP && ifdown wwan && ifup wwan && iptables -I OUTPUT -p icmp --icmp-type destination-unreachable -j ACCEPT
