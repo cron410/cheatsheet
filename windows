@@ -3,6 +3,8 @@ powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsit
 
 Robocopy
 robocopy C:\source F:\desitnation /XJ /MAX:5000000000 /E /mir /np /mt:1
+robocopy source destination /E /ZB /DCOPY:T /COPYALL /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+ROBOCOPY "\\servername\sharelocation" "\\newservername\newsharelocation" /MIR /SEC /LOG:location:\nameoflogfile.
 
 Office 365 powershell GUI
 https://github.com/bwya77/O365-Administration-Center
