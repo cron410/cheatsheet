@@ -19,8 +19,8 @@ Webroot WEbfilter Exceptions
 *.prevx.com/*
 WSAWebFilteringPortal.elasticbeanstalk.com/*
 
-
-
+Office 365 force AD sync
+Start-ADSyncSyncCycle -PolicyType Delta
 
 ###### OLD ######
 Office 365 force AD sync
