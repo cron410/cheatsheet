@@ -19,8 +19,10 @@ Webroot WEbfilter Exceptions
 *.prevx.com/*
 WSAWebFilteringPortal.elasticbeanstalk.com/*
 
-Office 365 force AD sync
+::Office 365::
 Start-ADSyncSyncCycle -PolicyType Delta
+::Exchange add list of owners to all distribution groups::
+Get-DistributionGroup | Set-DistributionGroup -ManagedBy “Jane Fonda","Dan Smith","John Doe" –BypassSecurityGroupManagerCheck
 
 ###### OLD ######
 Office 365 force AD sync
