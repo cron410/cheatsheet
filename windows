@@ -21,10 +21,14 @@ WSAWebFilteringPortal.elasticbeanstalk.com/*
 
 ::Office 365::
 Start-ADSyncSyncCycle -PolicyType Delta
+C:\Program Files\Microsoft Azure AD Sync\UIShell\miisclient.exe
+
 ::Exchange add list of owners to all distribution groups::
 Get-DistributionGroup | Set-DistributionGroup -ManagedBy “Jane Fonda","Dan Smith","John Doe" –BypassSecurityGroupManagerCheck
+
 ::Add emails from .txt file to distribution group::
 Get-Content c:\user_emails.txt | ForEach-Object {  Add-DistributionGroupMember -Identity list@domain.com -Member $_}
+
 
 ###### OLD ######
 Office 365 force AD sync
