@@ -26,6 +26,7 @@ WSAWebFilteringPortal.elasticbeanstalk.com/*
 
 ::Office 365::
 Start-ADSyncSyncCycle -PolicyType Delta
+Start-ADSyncSyncCycle -PolicyType Initial
 C:\Program Files\Microsoft Azure AD Sync\UIShell\miisclient.exe
 
 ::Exchange add list of owners to all distribution groups::
