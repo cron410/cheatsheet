@@ -2,6 +2,11 @@ Download file with CMD via powershell (do not add %20 for spaces)
 powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsite.as/on the internet.html', 'C:\users\Public\Desktop\this thing.txt') }"
 msiexec /qn /i %logonserver%\netlogon\ScreenConnect\ScreenConnect.ClientSetup.msi
 
+::Find domain controller on current network::
+nslookup    
+set type=all
+_ldap._tcp.dc._msdcs.DOMAIN_NAME
+
 ::Find a process running on a specific port number::
 netstat -ao | find "49201"
 netstat -ao | find "8080"
