@@ -8,6 +8,9 @@ nslookup
 set type=all
 _ldap._tcp.dc._msdcs.DOMAIN_NAME
 
+::lookup your external IP from CMD
+nslookup myip.opendns.com. resolver1.opendns.com
+
 ::Find a process running on a specific port number::
 netstat -ao | find "49201"
 netstat -ao | find "8080"
