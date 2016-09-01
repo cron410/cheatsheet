@@ -15,6 +15,12 @@ nslookup myip.opendns.com. resolver1.opendns.com
 netstat -ao | find "49201"
 netstat -ao | find "8080"
 
+:: Windows service control
+:get real service name:
+sc getkeyname "exacqvision server"  
+:set serivce to always restart:
+sc failure "exacqVisionserver" reset= 86400 actions= restart/1000/restart/1000/restart/1000
+
 Robocopy
 robocopy C:\source F:\desitnation /XJ /MAX:5000000000 /E /mir /np /mt:1
 robocopy source destination /E /ZB /DCOPY:T /COPYALL /R:1 /W:1 /V /TEE /LOG:Robocopy.log
