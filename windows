@@ -3,6 +3,9 @@ powershell -command "& { (New-Object Net.WebClient).DownloadFile('http://wwebsit
 msiexec /qn /i %logonserver%\netlogon\ScreenConnect\ScreenConnect.ClientSetup.msi
 msiexec /qn /i C:\ScreenConnect.ClientSetup.msi
 
+extract .zip file
+powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('foo.zip', 'bar'); }"
+
 ::Find domain controller on current network::
 nslookup    
 set type=all
