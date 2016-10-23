@@ -3,6 +3,11 @@ then restart WAN connection (in this case wwan in OpenWRT), then enable ICMP Des
 It works, but fucks with any network monitoring you may want to do.
 */10 * * * * iptables -I OUTPUT -p icmp --icmp-type destination-unreachable -j DROP && ifdown wwan && ifup wwan && iptables -I OUTPUT -p icmp --icmp-type destination-unreachable -j ACCEPT
 
-
 Lookup your external IP from CLI.
 nslookup myip.opendns.com. resolver1.opendns.com
+
+Lockdown SSH
+sed -i 's/^.*Port .*/Port 5525/' /etc/ssh/sshd_config
+sed -i 's/^.*PermitRootLogin .*/PermitRootLogin no/g' /etc/ssh/sshd_config
+sed -i 's/^.*PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+/etc/init.d/ssh restart
