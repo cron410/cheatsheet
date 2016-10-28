@@ -6,6 +6,12 @@ msiexec /qn /i C:\ScreenConnect.ClientSetup.msi
 extract .zip file
 powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('foo.zip', 'bar'); }"
 
+local account password Never Expire
+wmic UserAccount where Name='serviceadmin' set PasswordExpires=False
+
+domain account password Never Expire
+dsquery user domainroot -name serviceadmin* | dsmod user -pwdneverexpires yes
+
 ::Find domain controller on current network::
 nslookup    
 set type=all
