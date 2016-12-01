@@ -1,0 +1,14 @@
+#!/bin/bash
+
+command -v bc >/dev/null 2>&1 || { echo >&2 "I require \"bc\" but it's not installed.  Aborting."; exit 1; }
+command -v ifstat >/dev/null 2>&1 || { echo >&2 "I require \"ifstat\" but it's not installed.  Aborting."; exit 1; }
+
+while :
+do
+# Press ctrl-c to exit
+x=`ifstat -b -i eth0 1 1 | tail -1 | tr '\t' ' '`;  #tail -1 takes the DL and UL speeds in KB/S
+x1=`echo $x | cut -d ' ' -f1`; x2=`echo $x | cut -d ' ' -f2`;
+x1=$(echo "scale=3; $x1/1024" | bc); # Convert DL rate to MB/S
+x2=$(echo "scale=3; $x2/1024" | bc); # Convert UL rate to MB/S
+printf "D: %0.3f Mb/s\t U: %0.3f Mb/s\n" "$x1" "$x2"
+done
