@@ -1,3 +1,5 @@
 
 ## does this one even work on supermicro? linux command.
 ipmitool -H 1.2.3.4 -U ADMIN -E -I lanplus bmc reset warm
+
+Datto Sirris "Siris" Supermicro BIOS password is R@str
