@@ -12,6 +12,7 @@ sed -i 's/^.*Port .*/Port 5525/' /etc/ssh/sshd_config
 sed -i 's/^.*PermitRootLogin .*/PermitRootLogin no/g' /etc/ssh/sshd_config
 sed -i 's/^.*PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
+apt-get install -y ufw
 
 #allow FSCK to auto-fix all errors whenever it runs on boot
 sed -i "s/^FSCKFIX=no$/FSCKFIX=yes/" /etc/default/rcS
