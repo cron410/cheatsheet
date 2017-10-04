@@ -16,13 +16,13 @@ sed -i 's/^.*PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/ss
 #allow FSCK to auto-fix all errors whenever it runs on boot
 sed -i "s/^FSCKFIX=no$/FSCKFIX=yes/" /etc/default/rcS
 
-#install docker on Debian
-sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+#install docker on Debian As ROOT
+apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
-sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
+add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
    $(lsb_release -cs) \
    stable"
 apt-get update
-apt-get install docker-ce
+apt-get install -y docker-ce
 groupadd docker
 gpasswd -a hive docker
