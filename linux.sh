@@ -39,3 +39,4 @@ apt-get install -y glusterfs-server
 
 #enable IP Forwarding for UPNP
 sed -i "s/^#net.ipv4.ip_forward=1$/net.ipv4.ip_forward=1/" /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf 
