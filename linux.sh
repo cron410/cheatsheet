@@ -35,3 +35,7 @@ DEBVER=$(grep 'VERSION=' /etc/os-release | grep -Eo '[a-z]+')
 echo deb https://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/${DEBID}/apt ${DEBVER} main > /etc/apt/sources.list.d/gluster.list
 apt-get update
 apt-get install -y glusterfs-server
+
+
+#enable IP Forwarding for UPNP
+sed -i "s/^#net.ipv4.ip_forward=1$/net.ipv4.ip_forward=1/" /etc/sysctl.conf
