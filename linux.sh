@@ -8,9 +8,12 @@
 nslookup myip.opendns.com. resolver1.opendns.com
 
 #Lockdown SSH  https://ubuntuforums.org/archive/index.php/t-1462345.html
+# https://unix.stackexchange.com/questions/302512/add-public-key-to-remote-servers-authorized-keys-and-execute-some-commands
+cat ~/.ssh/id_rsa.pub | ssh root@192.168.1.197 "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 sed -i 's/^.*Port .*/Port 5525/' /etc/ssh/sshd_config
 sed -i 's/^.*PermitRootLogin .*/PermitRootLogin no/g' /etc/ssh/sshd_config
 sed -i 's/^.*PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+systemctl reload sshd
 /etc/init.d/ssh restart
 apt-get install -y ufw
 
