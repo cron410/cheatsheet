@@ -14,6 +14,7 @@ sed -i 's/^.*Port .*/Port 5525/' /etc/ssh/sshd_config
 sed -i 's/^.*PermitRootLogin .*/PermitRootLogin no/g' /etc/ssh/sshd_config
 sed -i 's/^.*PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 systemctl reload sshd
+service ssh restart
 /etc/init.d/ssh restart
 apt-get install -y ufw
 
