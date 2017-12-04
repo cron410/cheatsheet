@@ -21,6 +21,12 @@ apt-get install -y ufw
 #allow FSCK to auto-fix all errors whenever it runs on boot
 sed -i "s/^FSCKFIX=no$/FSCKFIX=yes/" /etc/default/rcS
 
+#upgrade to latest LTS ubuntu
+apt-get update
+apt-get upgrade -y
+apt-get update #IMPORTANT for next command to work
+do-release-upgrade
+
 #install docker and gluster on Debian As ROOT
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
