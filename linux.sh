@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# RancherOS
 alias base64="docker run -ti --rm -v $(pwd):/root ubuntu /usr/bin/base64"
 
 
