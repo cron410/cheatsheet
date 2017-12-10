@@ -1,4 +1,8 @@
 #!/bin/bash
+
+alias base64="docker run -ti --rm -v $(pwd):/root ubuntu /usr/bin/base64"
+
+
 #cron job for every 10 minutes, disable ICMP "Destination Net Unreachable" so clients don't know the WAN is going to go down,
 #then restart WAN connection (in this case wwan in OpenWRT), then enable ICMP Destination Net Unreachable for actual network down situation.
 #It works, but fucks with any network monitoring you may want to do.
