@@ -2,6 +2,7 @@
 
 # RancherOS
 alias base64="docker run -ti --rm -v $(pwd):/root ubuntu /usr/bin/base64"
+alias git="docker run -ti --rm -v $(pwd):/git bwits/docker-git-alpine"
 
 
 #cron job for every 10 minutes, disable ICMP "Destination Net Unreachable" so clients don't know the WAN is going to go down,
