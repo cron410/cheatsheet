@@ -56,3 +56,15 @@ apt-get install -y glusterfs-server
 #enable IP Forwarding for UPNP
 sed -i "s/^#net.ipv4.ip_forward=1$/net.ipv4.ip_forward=1/" /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf 
+
+
+#boot CoreOS ISO from grub2
+
+menuentry "CoreOS ISO" {
+set root='lvm/localhost--vg-root'
+set isofile="/core.iso"
+loopback loop (lvm/localhost--vg-root)$isofile
+linux (loop)/coreos/vmlinuz boot=casper iso-scan/filename=${isofile} quiet splash
+initrd (loop)/coreos/cpio.gz
+}
+
