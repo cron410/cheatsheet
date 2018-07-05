@@ -58,13 +58,26 @@ sed -i "s/^#net.ipv4.ip_forward=1$/net.ipv4.ip_forward=1/" /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf 
 
 
-#boot CoreOS ISO from grub2
+#boot CoreOS ISO from grub2 on Debian
 
-menuentry "CoreOS ISO" {
+insmod lvm
+
+menuentry "CoreOS ISO Debian CAC" {
 set root='lvm/localhost--vg-root'
-set isofile="/core.iso"
+set isofile="/coreos.iso"
 loopback loop (lvm/localhost--vg-root)$isofile
 linux (loop)/coreos/vmlinuz boot=casper iso-scan/filename=${isofile} quiet splash
 initrd (loop)/coreos/cpio.gz
 }
+
+menuentry "CoreOS ISO Ubuntu CAC" {
+set root='lvm/CAC_VG-CAC_LV'
+set isofile="/core.iso"
+loopback loop (lvm/CAC_VG-CAC_LV)$isofile
+linux (loop)/coreos/vmlinuz boot=casper iso-scan/filename=${isofile} quiet spla$
+initrd (loop)/coreos/cpio.gz
+}
+
+wget https://stable.release.core-os.net/amd64-usr/current/coreos_production_iso_image.iso -O /coreos.iso
+
 
