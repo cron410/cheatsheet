@@ -1,0 +1,6 @@
+curl -O https://raw.githubusercontent.com/coreos/init/master/bin/coreos-install
+wget https://raw.githubusercontent.com/coreos/init/master/bin/coreos-install
+chmod +x coreos-install
+curl -O http://iszom.uk.to/core.config
+wget http://iszom.uk.to/core.config
+./coreos-install -d "/dev/sda" -c ./core.config -C stable
