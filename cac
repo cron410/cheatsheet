@@ -1,7 +1,12 @@
 curl -O https://raw.githubusercontent.com/coreos/init/master/bin/coreos-install
 wget https://raw.githubusercontent.com/coreos/init/master/bin/coreos-install
 chmod +x coreos-install
-curl -O http://iszom.uk.to/core.config
-wget http://iszom.uk.to/core.config
+curl -O http://iszom.uk.to/install.core.config
+wget http://iszom.uk.to/install.core.config
 umount /dev/sda1
-./coreos-install -d "/dev/sda" -c ./core.config -C stable
+umount /dev/sda2
+umount /dev/sda3
+umount /dev/sda4
+umount /dev/sda5
+umount /dev/sda6
+./coreos-install -d "/dev/sda" -c ./install.core.config -C stable
