@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Arduino
+#read flash to .hex file
+avrdude -p atmega1284p -P /dev/ttyUSB0 -c arduino -U flash:r:flashdump.hex:i
+
+
 # RancherOS
 alias base64="docker run -ti --rm -v $(pwd):/root ubuntu /usr/bin/base64"
 alias git="docker run -ti --rm -v $(pwd):/git bwits/docker-git-alpine"
